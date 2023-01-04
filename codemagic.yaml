@@ -1,0 +1,16 @@
+workflows:
+  tests:
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: "*"
+        - pattern: gh-pages
+          include: false
+      cancel_previous_builds: true
+    environment:
+      xcode: 14.2
+    scripts:
+      - name: Run tests
+        script: xcode-project run-tests
+        test_report: build/macos/test/*.xml
