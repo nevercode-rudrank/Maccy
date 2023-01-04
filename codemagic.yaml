@@ -9,8 +9,16 @@ workflows:
           include: false
       cancel_previous_builds: true
     environment:
+      vars:
+        XCODE_PROJECT: Maccy.xcodeproj
+        XCODE_SCHEME: Maccy
       xcode: 14.2
     scripts:
       - name: Run tests
-        script: xcode-project run-tests --project Maccy.xcodeproj --scheme Maccy
+        script: |
+          xcode-project run-tests \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME" \
+            --test-xcargs "CODE_SIGNING_ALLOWED='no'" \
+            --output-dir build/macos/test
         test_report: build/macos/test/*.xml
