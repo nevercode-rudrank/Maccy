@@ -12,5 +12,5 @@ workflows:
       xcode: 14.2
     scripts:
       - name: Run tests
-        script: xcode-project run-tests --project Maccy.xcodeproj
+        script: xcode-project run-tests --project Maccy.xcodeproj --scheme Maccy
         test_report: build/macos/test/*.xml
