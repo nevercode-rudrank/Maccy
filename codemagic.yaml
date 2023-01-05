@@ -12,7 +12,7 @@ workflows:
       vars:
         XCODE_PROJECT: Maccy.xcodeproj
         XCODE_SCHEME: Maccy
-      xcode: 14.2
+      xcode: 14.1
     scripts:
       - name: Run tests
         script: |
