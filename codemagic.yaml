@@ -13,7 +13,7 @@ workflows:
         XCODE_PROJECT: Maccy.xcodeproj
         XCODE_SCHEME: Maccy
       xcode: 14.1
-      instance_type: mac_pro
+    instance_type: mac_pro
     scripts:
       - name: Run tests
         script: |
