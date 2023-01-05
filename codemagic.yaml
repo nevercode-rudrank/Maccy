@@ -1,6 +1,5 @@
 workflows:
   tests:
-    instance_type: mac_pro
     triggering:
       events:
         - push
@@ -13,7 +12,7 @@ workflows:
       vars:
         XCODE_PROJECT: Maccy.xcodeproj
         XCODE_SCHEME: Maccy
-      xcode: 14.1
+      xcode: 14.2
     scripts:
       - name: Keyboard 
         script: defaults write com.apple.iphonesimulator ConnectHardwareKeyboard 0
