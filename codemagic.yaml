@@ -13,8 +13,9 @@ workflows:
         XCODE_PROJECT: Maccy.xcodeproj
         XCODE_SCHEME: Maccy
       xcode: 14.1
-    instance_type: mac_pro
     scripts:
+      - name: Keyboard 
+        script: defaults write com.apple.iphonesimulator ConnectHardwareKeyboard 1
       - name: Run tests
         script: |
           xcode-project run-tests \
