@@ -15,7 +15,7 @@ workflows:
       xcode: 14.1
     scripts:
       - name: Keyboard 
-        script: defaults write com.apple.iphonesimulator ConnectHardwareKeyboard 1
+        script: defaults write com.apple.iphonesimulator ConnectHardwareKeyboard 0
       - name: Run tests
         script: |
           xcode-project run-tests \
