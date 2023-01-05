@@ -24,7 +24,6 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run: python -m pip install codemagic-cli-tools
       - run: xcode-build test -project Maccy.xcodeproj -scheme Maccy -sdk macosx
       - store_test_results:
           path: test_output
