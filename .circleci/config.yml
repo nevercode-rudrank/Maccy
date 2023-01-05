@@ -17,7 +17,12 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run: xcodebuild test -scheme Maccy -project Maccy.xcodeproj -sdk macosx -test-xcargs "CODE_SIGNING_ALLOWED='no'"
+      - run: python -m pip install codemagic-cli-tools
+      - run: xcode-project run-tests \
+            --project Maccy.xcodeproj \
+            --scheme Maccy. \
+            --sdk macosx \
+            --test-xcargs "CODE_SIGNING_ALLOWED='no'"
       - store_test_results:
           path: test_output
       - store_artifacts:
