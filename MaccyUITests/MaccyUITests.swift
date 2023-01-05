@@ -382,6 +382,10 @@ class MaccyUITests: XCTestCase {
     cUp.post(tap: .cghidEventTap)
     shiftUp.post(tap: .cghidEventTap)
     commandUp.post(tap: .cghidEventTap)
+    
+    print("⛔️ SHIFTTUP")
+    print(shiftUp)
+    print(commandUp)
   }
 
   private func waitUntilPoppedUp() {
