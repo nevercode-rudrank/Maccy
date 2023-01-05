@@ -382,10 +382,19 @@ class MaccyUITests: XCTestCase {
     cUp.post(tap: .cghidEventTap)
     shiftUp.post(tap: .cghidEventTap)
     commandUp.post(tap: .cghidEventTap)
+    
+    let trusted = kAXTrustedCheckOptionPrompt.takeUnretainedValue()
+    let privOptions = [trusted: true] as CFDictionary
+    let accessEnabled = AXIsProcessTrustedWithOptions(privOptions)
+
+    if accessEnabled == true {
+    } else {
+       XCTFail("Maccy does not have access.")
+    }
   }
 
   private func waitUntilPoppedUp() {
-    if !app.menuItems.firstMatch.waitForExistence(timeout: 3) {
+    if !app.menuItems.firstMatch.waitForExistence(timeout: 5) {
       XCTFail("Maccy did not pop up")
     }
   }
