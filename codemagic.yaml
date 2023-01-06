@@ -15,7 +15,7 @@ workflows:
       xcode: 14.2
     scripts:
       - name: Run test 
-        script:  xcodebuild test-without-building -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -destination "platform=macOS,arch=arm64"
+        script: xcodebuild test-without-building -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -sdk macosx CODE_SIGNING_ALLOWED='no'
       - name: Run tests
         script: |
           xcode-project run-tests \
