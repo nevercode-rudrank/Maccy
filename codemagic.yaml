@@ -14,8 +14,8 @@ workflows:
         XCODE_SCHEME: Maccy
       xcode: 14.2
     scripts:
-      - name: Keyboard 
-        script: defaults write com.apple.iphonesimulator ConnectHardwareKeyboard 0
+      - name: Run test 
+        script:  xcodebuild test-without-building -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -destination "platform=macOS,arch=arm64"
       - name: Run tests
         script: |
           xcode-project run-tests \
